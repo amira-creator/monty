@@ -1,57 +1,53 @@
 #include "monty.h"
 
 /**
- * f_rotl- rotate stack element to the top
- * @head: first node of stack
- * @counter: line counter
- *
- * Return: none
+ * rotl_func - function rotates stack element to top
+ * @hd: 1st node of stack
+ * @coun: line counter
+ * Return: nothing
  */
-
-void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void rotl_func(stack_t **hd,  __attribute__((unused)) unsigned int coun)
 {
-	stack_t *tmp = *head, *aux;
+	stack_t *tp = *hd, *ax;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*hd == NULL || (*hd)->next == NULL)
 	{
 		return;
 	}
-	aux = (*head)->next;
-	aux->prev = NULL;
-	while (tmp->next != NULL)
+	ax = (*hd)->next;
+	ax->prev = NULL;
+	while (tp->next != NULL)
 	{
-		tmp = tmp->next;
+		tp = tp->next;
 	}
-	tmp->next = *head;
-	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = aux;
+	tp->next = *hd;
+	(*hd)->next = NULL;
+	(*hd)->prev = tp;
+	(*hd) = ax;
 }
-
 /**
- * f_rotr - rotate stack element to the bottom
- * @head: first node of stack
- * @counter: line counter
- *
- * Return: none
+ * rotr_func - function rotates stack element to bottom
+ * @head: 1st  node of stack
+ * @coun: line counter
+ * Return: Nothing
  */
 
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void rotr_func(stack_t **hd, __attribute__((unused)) unsigned int coun)
 {
-	stack_t *copy;
+	stack_t *cpy;
 
-	copy = *head;
-	if (*head == NULL || (*head)->next == NULL)
+	cpy = *hd;
+	if (*hd == NULL || (*hd)->next == NULL)
 	{
 		return;
 	}
-	while (copy->next)
+	while (cpy->next)
 	{
-		copy = copy->next;
+		cpy = cpy->next;
 	}
-	copy->next = *head;
-	copy->prev->next = NULL;
-	copy->prev = NULL;
-	(*head)->prev = copy;
-	(*head) = copy;
+	cpy->next = *hd;
+	cpy->prev->next = NULL;
+	cpy->prev = NULL;
+	(*hd)->prev = cpy;
+	(*hd) = cpy;
 }

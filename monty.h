@@ -63,16 +63,16 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 
 char  *clean_line(char *content);
-void free_stack(stack_t *head);
+void stk_free(stack_t *hd);
 
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+int f_execute(char *content, stack_t **stk, unsigned int count, FILE *file);
 
-void f_push(stack_t **head, unsigned int number);
-void f_pall(stack_t **head, unsigned int number);
-void f_pint(stack_t **head, unsigned int number);
-void f_pop(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
-void f_nop(stack_t **head, unsigned int counter);
+void push_fun(stack_t **hd, unsigned int coun);
+void pall_func(stack_t **hd, unsigned int coun);
+void pint_func(stack_t **hd, unsigned int coun);
+void pop_func(stack_t **hd, unsigned int coun);
+void swap_func(stack_t **hd, unsigned int coun);
+void nop_func(stack_t **head, unsigned int counter);
 
 void f_add(stack_t **head, unsigned int counter);
 void f_sub(stack_t **head, unsigned int counter);
@@ -80,15 +80,15 @@ void f_div(stack_t **head, unsigned int counter);
 void f_mul(stack_t **head, unsigned int counter);
 void f_mod(stack_t **head, unsigned int counter);
 
-void f_pchar(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
+void print_char(stack_t **hd, unsigned int count);
+void print_string(stack_t **hd, unsigned int coun);
 
-void f_rotl(stack_t **head, unsigned int counter);
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void rotr_func(stack_t **hd, __attribute__((unused)) unsigned int coun);
+void rotl_func(stack_t **hd,  __attribute__((unused)) unsigned int coun);
 
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
+void node_add(stack_t **hd, int n);
+void add_queue(stack_t **hd, int n);
+void queue_func(stack_t **hd, unsigned int coun);
+void stack_func(stack_t **hd, unsigned int coun);
 
 #endif

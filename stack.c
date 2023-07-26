@@ -1,36 +1,34 @@
 #include "monty.h"
 
 /**
- * free_stack - freedoubly linked list
- * @head: first node of stack
- * Return: none
+ * stk_free - free doubl linked list
+ * @hd: first node of stack
+ * Return: nothing
  */
 
-void free_stack(stack_t *head)
+void stk_free(stack_t *hd)
 {
-	stack_t *temp;
+	stack_t *tp;
 
-	temp = head;
-	while (head)
+	tp = hd;
+	while (hd)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		tp = hd->next;
+		free(hd);
+		hd = tp;
 	}
 }
-
 /**
- * f_stack - free stack
- * @head: first node(unused)
- * @counter: line counter (unused)
- *
- * Return: none
+ * stack_func - free stack
+ * @hd: 1st node(unused)
+ * @coun: line counter
+ * Return: nothing
 */
 
-void f_stack(stack_t **head, unsigned int counter)
+void stack_func(stack_t **hd, unsigned int coun)
 {
-	(void)head;
-	(void)counter;
+	(void)hd;
+	(void)coun;
 
 	bus.lifi = 0;
 }
