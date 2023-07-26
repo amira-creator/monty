@@ -36,7 +36,7 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-}  bus_t;
+} bus_t;
 extern bus_t bus;
 /**
  * struct instruction_s - opcode and its function
@@ -55,4 +55,5 @@ typedef struct instruction_s
 void Apush(stack_t **h, unsigned int conter);
 void stack_f(stack_t *h);
 void node_add(stack_t **h, int num);
+void Apall(stack_t **hd, unsigned int conter);
 #endif
