@@ -56,4 +56,5 @@ void Apush(stack_t **h, unsigned int conter);
 void stack_f(stack_t *h);
 void node_add(stack_t **h, int num);
 void Apall(stack_t **hd, unsigned int conter);
+void f_pint(stack_t **head, unsigned int counter);
 #endif
