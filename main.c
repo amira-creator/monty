@@ -15,7 +15,7 @@ int main(int gc, char *gv[])
 	FILE *file;
 	size_t size_s = 0;
 	ssize_t line_read = 1;
-	stack_t *stk = NULL;
+	stack_t *stack = NULL;
 	unsigned int count = 0;
 
 	if (gc != 2)
@@ -41,12 +41,12 @@ int main(int gc, char *gv[])
 		count++;
 
 		if (line_read > 0)
-			f_execute(cont, &stk, count, file);
+			f_execute(cont, &stack, count, file);
 
 		free(cont);
 	}
 
-	stk_free(stk);
+	stk_free(stack);
 	fclose(file);
 	return (0);
 }
