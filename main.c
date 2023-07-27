@@ -4,50 +4,49 @@
 bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
-* main - monty code interpreter
-* @argc: argument counter
-* @argv: argument vector
-*
+* main - entry point
+* @gc: 1st argument 
+* @gv: 2nd argument
 * Return: always 0
 */
-int main(int argc, char *argv[])
+int main(int gc, char *gv[])
 {
-	char *content;
+	char *cont;
 	FILE *file;
-	size_t size = 0;
-	ssize_t read_line = 1;
-	stack_t *stack = NULL;
-	unsigned int counter = 0;
+	size_t size_s = 0;
+	ssize_t line_read = 1;
+	stack_t *stk = NULL;
+	unsigned int count = 0;
 
-	if (argc != 2)
+	if (gc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		fprintf(stderr, " file monty\n");
 		exit(EXIT_FAILURE);
 	}
 
-	file = fopen(argv[1], "r");
+	file = fopen(gv[1], "r");
 	bus.file = file;
 
 	if (!file)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error:Can't open this file %s\n", gv[1]);
 		exit(EXIT_FAILURE);
 	}
 
-	while (read_line > 0)
+	while (line_read > 0)
 	{
-		content = NULL;
-		read_line = getline(&content, &size, file);
-		bus.content = content;
-		counter++;
+		cont = NULL;
+		line_read = getline(&cont, &size_s, file);
+		bus.content = cont;
+		count++;
 
-		if (read_line > 0)
-			f_execute(content, &stack, counter, file);
+		if (line_read > 0)
+			f_execute(cont, &stk, count, file);
 
-		free(content);
+		free(cont);
 	}
 
-	stk_free(stack);
+	stk_free(stk);
 	fclose(file);
 	return (0);
 }

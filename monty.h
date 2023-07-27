@@ -74,11 +74,11 @@ void pop_func(stack_t **hd, unsigned int coun);
 void swap_func(stack_t **hd, unsigned int coun);
 void nop_func(stack_t **head, unsigned int counter);
 
-void f_add(stack_t **head, unsigned int counter);
-void f_sub(stack_t **head, unsigned int counter);
-void f_div(stack_t **head, unsigned int counter);
-void f_mul(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
+void add_func(stack_t **hd, unsigned int coun);
+void subtraction_func(stack_t **hd, unsigned int coun);
+void multiplication_func(stack_t **hd, unsigned int count);
+void divided_func(stack_t **hd, unsigned int counter);
+void modulos_func(stack_t **hd, unsigned int count);
 
 void print_char(stack_t **hd, unsigned int count);
 void print_string(stack_t **hd, unsigned int coun);
